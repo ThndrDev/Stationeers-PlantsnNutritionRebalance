@@ -1,0 +1,13 @@
+<GameData>
+  <PackagingMachineRecipes>
+    <RecipeData>
+      <PrefabName>ItemCannedPowderedEggs</PrefabName>
+      <Recipe>
+        <Egg>2</Egg>
+        <Steel>1</Steel>
+        <Time>5</Time>
+		<RecipeType>Packagable</RecipeType>
+      </Recipe>
+    </RecipeData>
+  </PackagingMachineRecipes>
+</GameData>

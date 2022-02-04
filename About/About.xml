@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetadata xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>Plants and Nutrition Rebalance</Name>
+  <Author>Thund3r</Author>
+  <Version>0.6</Version>
+  <Description>WARNING: This mod will not work, unless you install Stationeers.Addon mod loader.
+Read how to install it here: https://github.com/Erdroy/Stationeers.Addons
+---
+Make sure to put the mod [b]above[/b] core inside the game.
+
+
+[b]Description:[/b]
+
+Plants and Food in general is almost pointless in the vanilla game, a single can of food fills your hunger forever, plants grow in half a game day and almost don't need resources, this also make fertilizers useless. This doesn't seem to be in line with the proposal of this great game (wich is to be for hardcore players).
+
+Yeah, I was unhappy so I made this mod to rebalance the plants growth time and human nutrition/hydration. Now you have a reason to build a big Hydroponics area in your base, maybe even a pantry room to store some emergency food in case something goes wrong and your plants die.
+
+In this mod, I tried to use Real World data as a base parameter, whenever possible.
+
+
+[b]What this mod changes:[/b]
+
+* The growth speed of plants: Now they take ~6 game days (orbit period in 2) or ~12 game days (orbit period in 1) to grow in perfect conditions and with full-time illumination. If you're not using Grow lights, expect 2x that time, as the plants stop growing in the dark. (In RL, small editable plants take at least 60 days to grow, so I used 1/10 of that).
+
+* The amount of water plants consumes: In the stock game, plants take very little water to grow, this mod changes it so they take a realistic amount of water from the pipes per tick. The consumption was calculated roughly from https://www.watereducation.org/post/food-facts-how-much-water-does-it-take-produce. In RL 3 tomatoes fruits need 24 Gallons or 110 liters of water to fully grow, so I adjusted the plants consumption per tick to match that value.
+
+* The max food and water of the character: Now you can stay 2½ game days without water and 10 game days without food before you start dying (orbit period in 2), more or less the same endurance of humans in RL.
+
+* The amount you have to eat and drink daily: This setting was balanced assuming that an average person has to drink 2 liters of water and consume 2000 calories every day. So you'll need to drink a little more than 1 bottle of water per day (1 bottle = 1.86 Liters ingame) and eat 2 full cans of food just to keep up with the Dehydration and Calories consumption rate (I considered 1 can of food = 1000 calories).
+
+* The amount of food/water you'll get after death/respawn (to avoid rewarding someone who dies with 100% resources). If you die or a new friend joins you, the character will respawn with food and water proportional to the days past in the save. Examples (considering sun/orbit period in 2):
+Died or friend joined in day 0 = respawn with 100% food/water
+Died or friend joined in day 1 = 90% food/water
+...
+Died or friend joins in day 7 = 30% food/water
+Died or friend joins in day 9 = 10% food/water
+After day 10, you'll respawn with minimal food and water, just enough for you to run to your (or friend's) pantry room and feast yourself.
+
+Also, remember that if you're playing in multiplayer, or as a guest in someone's save, if you go offline in a random place of your base and the host keep playing, after some time your character will die of starvation/hydration/suffocation and, when you respawn, you'll get the low food/water. To avoid this, you should logoff in a Sleeper https://stationeers-wiki.com/Sleeper or Cryotube https://stationeers-wiki.com/Cryotube. They stop food/water consumtion completely and provide oxygen as long as your online friends keep the power and oxygen going.
+
+* Adds a new starting condition called "Default-PlantsRebalance" based on the Default condition with some small changes:
+ - The lander will spawn with 6 stacks of each seed instead of 3.
+ - Some of the useless trash in the lander, like flags and the wrench were exchanged for extra cans of food.
+ - Each character that spawn will arrive with extra 20 seeds in inventory, this way will be possible to start in MP with any number of players.
+For Vulcan and Venus, the original spawn conditions don't have any seeds, you need to get them through the trader, so i don't made any changes in them.
+
+[b]Recommended Game Configuration:[/b]
+
+This mod is balanced with the following ingame configurations:
+Sun Orbit Period in 2.
+Hunger/Hydration Rate in 1, but it can be adjusted for your liking, if you want a easier or harder experience (i suggest 0.7 for "easy", 1.3 for "hard" and 2 for "very hard" difficulty). 
+
+These recommendations are considering easy/medium maps like Moon/Mars/Europa. On Vulcan or Venus this mod will be an *extreme* challenge mainly due to the temperature, water and urgency to build the hydrophonics (let me know if someone manages to beat these planets with this mod).
+
+
+[b]What to expect and tips:[/b]
+
+With the recommended game settings, when you start a new game, you'll have roughly 5 game days to establish your base, build your hydrophonics and start growing the plants. You'll need at least 20 plants growing (with growlights) to feed each person with enough food during 6 ingame days, but i recommend 25 plants at least, to be on the safe side. Also note different cultures give different nutrition values, so the amount of plants depends of that.
+Also try to keep the plants in the 30 to 40 °C temperature range, always check your water reserves and temperature which needs to be between 5°C to 55°C and, if possible, use fertilizers to boost the grow time and increase the yield of your plants, you can use the seeds to make fertilizers. In desperate times, you can also use the trader to buy food or seeds.
+
+Also note that if you adjust the Hunger/Hydration rate to other value different than 1, the amount of plants you need to grow and the time to deploy your hydrophonics changes accordingly. Hunger/Hydration Rate in 1.5 means you need to grow at least 30 plants per 6 days, also means you need to sow your first plants at day 4.
+
+[b]Updates:[/b]
+
+* v0.3 - Now, if you die, your food/water would not be filled to 100%.
+* v0.4 - Small balance: Foods will fill you 10% more. Added a new spawning condition with more seeds and extra food.
+* v0.5 - Changed several food nutrition values and recipes to balance them. Made complex food worth the cooking. You also eat some foods faster now.
+* v0.6 - Small adjust to the nutrition values of some foods. Fix to growth states of plants (after some time, mature plants were dying when they shouldn't).
+
+[b]Future plans for this mod:[/b]
+
+* Configuration file so the players can do the maths and adjust the mod parameters by themselves if they want so.
+* Dynamic dehydration and Calories consumption rate, accordingly to the character activity (if you're running, you'll dehydrate faster, sitting dehydrate slower)
+* Implement a kind of cooldown to prevent overfeeding or maybe limit how mutch of the same culture you can eat 
+(Please leave your feedback about these ideas)
+</Description>
+  <WorkshopHandle>2584817814</WorkshopHandle>
+  <Tags />
+</ModMetadata>

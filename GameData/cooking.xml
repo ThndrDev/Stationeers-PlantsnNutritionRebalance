@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <MicrowaveRecipes>
+    <RecipeData>
+      <PrefabName>ItemBreadLoaf</PrefabName>
+      <Recipe>
+        <Flour>100</Flour>
+        <Oil>5</Oil>
+        <Time>10</Time>
+      </Recipe>
+    </RecipeData>
+
+    <RecipeData>
+      <PrefabName>ItemCookedRice</PrefabName>
+      <Recipe>
+        <Rice>1</Rice>
+        <Time>4</Time>
+      </Recipe>
+    </RecipeData>
+
+    <RecipeData>
+      <PrefabName>ItemCookedPowderedEggs</PrefabName>
+      <Recipe>
+        <Egg>1</Egg>
+        <Time>5</Time>
+      </Recipe>
+    </RecipeData>
+
+    <RecipeData>
+      <PrefabName>ItemCookedSoybean</PrefabName>
+      <Recipe>
+        <Soy>1</Soy>
+        <Time>5</Time>
+      </Recipe>
+    </RecipeData>
+
+  </MicrowaveRecipes>
+</GameData>
