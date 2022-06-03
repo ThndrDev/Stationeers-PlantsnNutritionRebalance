@@ -2,21 +2,21 @@
 <ModMetadata xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Name>Plants and Nutrition Rebalance</Name>
   <Author>Thund3r</Author>
-  <Version>0.6</Version>
+  <Version>0.7</Version>
   <Description>WARNING: This mod will not work, unless you install Stationeers.Addon mod loader.
 Read how to install it here: https://github.com/Erdroy/Stationeers.Addons
 ---
 Make sure to put the mod [b]above[/b] core inside the game.
-
+---
+NOTE: After the MP update they temporarily disabled XML workshop mods, so you need to manually add some changes inside the game XML files until it's fixed. Check in the discord how to do that.
 
 [b]Description:[/b]
 
 Plants and Food in general is almost pointless in the vanilla game, a single can of food fills your hunger forever, plants grow in half a game day and almost don't need resources, this also make fertilizers useless. This doesn't seem to be in line with the proposal of this great game (wich is to be for hardcore players).
 
-Yeah, I was unhappy so I made this mod to rebalance the plants growth time and human nutrition/hydration. Now you have a reason to build a big Hydroponics area in your base, maybe even a pantry room to store some emergency food in case something goes wrong and your plants die.
+This mod aims to fix that by changing the plants growth time, human and Zillian nutrition/hydration and food calories. Now you'll have a reason to build a big greenhouse in your base, maybe even a pantry room to store some emergency food in case something goes wrong and your plants die.
 
-In this mod, I tried to use Real World data as a base parameter, whenever possible.
-
+In this mod, I tried to use Real World data as a base parameter, whenever possible. But BE WARNED, this will add new challenges to the game and will make it harder (but much more interesting). If you don't want that, don't use this mod!
 
 [b]What this mod changes:[/b]
 
@@ -26,7 +26,7 @@ In this mod, I tried to use Real World data as a base parameter, whenever possib
 
 * The max food and water of the character: Now you can stay 2½ game days without water and 10 game days without food before you start dying (orbit period in 2), more or less the same endurance of humans in RL.
 
-* The amount you have to eat and drink daily: This setting was balanced assuming that an average person has to drink 2 liters of water and consume 2000 calories every day. So you'll need to drink a little more than 1 bottle of water per day (1 bottle = 1.86 Liters ingame) and eat 2 full cans of food just to keep up with the Dehydration and Calories consumption rate (I considered 1 can of food = 1000 calories).
+* The amount you have to eat and drink daily: This setting was balanced assuming that an average person has to drink 2 liters of water and consume 2000 calories every day. So you'll need to drink a little more than 1 bottle of water per day (1 bottle = 1.86 Liters ingame) and eat 2 or 3 full cans of food (depending of the can) just to keep up with the Dehydration and Calories consumption rate.
 
 * The amount of food/water you'll get after death/respawn (to avoid rewarding someone who dies with 100% resources). If you die or a new friend joins you, the character will respawn with food and water proportional to the days past in the save. Examples (considering sun/orbit period in 2):
 Died or friend joined in day 0 = respawn with 100% food/water
@@ -36,7 +36,13 @@ Died or friend joins in day 7 = 30% food/water
 Died or friend joins in day 9 = 10% food/water
 After day 10, you'll respawn with minimal food and water, just enough for you to run to your (or friend's) pantry room and feast yourself.
 
-Also, remember that if you're playing in multiplayer, or as a guest in someone's save, if you go offline in a random place of your base and the host keep playing, after some time your character will die of starvation/hydration/suffocation and, when you respawn, you'll get the low food/water. To avoid this, you should logoff in a Sleeper https://stationeers-wiki.com/Sleeper or Cryotube https://stationeers-wiki.com/Cryotube. They stop food/water consumtion completely and provide oxygen as long as your online friends keep the power and oxygen going.
+Also, remember that if you're playing in multiplayer, or as a guest in someone's save, if you go offline in a random place of your base and the host keep playing, after some time your character will die of starvation/hydration/suffocation and, when you respawn, you'll get the low food/water. To avoid this, you should logoff in a Sleeper https://stationeers-wiki.com/Sleeper or Cryotube https://stationeers-wiki.com/Cryotube. They stop food/water consumtion completely and provide oxygen as long as your online friends keep the power and oxygen going, also put an APC with battery near the sleeper because power interruptions (by changing wires for example) will kill you or your sleeping friends.
+
+* The recipe and nutrition of some foods (see the table in the mod images). I tried to maintain the original recipes whenever possible, but in stock game, some recipes are quite unbalanced, take Bread for example, the vanilla recipe needs 200 flour and each wheat makes 5 flour so, to make a single bread, you needed to harvest 40 wheat. If you chose to sustain yourself with only bread, you'll need an hydrophonic with 540 plants growing. To fix this and other imbalances, I changed:
+  - 5 cooking recipes and 2 reagent recipes (the ones marked as yellow are the modified ones). 
+  - Most of the foods nutrition values, to make all of them useful and feasible to be used. 
+  - Complex recipes and the ones that need eggs now are kind like the endgame of nutrition. Now, the best food is pumpkin pie, it gives you enough calories for 2 days. But anything made with eggs will give you good nutrition.
+  - When you make Canned food and cereal bars, it will loose a litte nutrition as a tradeoff for their ability to never spoil.
 
 * Adds a new starting condition called "Default-PlantsRebalance" based on the Default condition with some small changes:
  - The lander will spawn with 6 stacks of each seed instead of 3.
@@ -50,29 +56,27 @@ This mod is balanced with the following ingame configurations:
 Sun Orbit Period in 2.
 Hunger/Hydration Rate in 1, but it can be adjusted for your liking, if you want a easier or harder experience (i suggest 0.7 for "easy", 1.3 for "hard" and 2 for "very hard" difficulty). 
 
-These recommendations are considering easy/medium maps like Moon/Mars/Europa. On Vulcan or Venus this mod will be an *extreme* challenge mainly due to the temperature, water and urgency to build the hydrophonics (let me know if someone manages to beat these planets with this mod).
+These recommendations are considering easy/medium maps like Moon/Mars/Europa. On Vulcan or Venus this mod will be an tough challenge mainly due to the temperature, water and urgency to build the hydrophonics.
 
 
 [b]What to expect and tips:[/b]
 
-With the recommended game settings, when you start a new game, you'll have roughly 5 game days to establish your base, build your hydrophonics and start growing the plants. You'll need at least 20 plants growing (with growlights) to feed each person with enough food during 6 ingame days, but i recommend 25 plants at least, to be on the safe side. Also note different cultures give different nutrition values, so the amount of plants depends of that.
-Also try to keep the plants in the 30 to 40 °C temperature range, always check your water reserves and temperature which needs to be between 5°C to 55°C and, if possible, use fertilizers to boost the grow time and increase the yield of your plants, you can use the seeds to make fertilizers. In desperate times, you can also use the trader to buy food or seeds.
+With the recommended game settings, when you start a new game, you'll have roughly 5 game days to establish your base, build your greenhouse and start growing some plants. You'll need at least 25 plants growing (with growlights) to feed each person with enough food during 6 ingame days. Also note different foods give different nutrition values, so the amount of plants depends of what you're eating.
+Also try to keep the plants in the 30 to 40 °C temperature range, always check your water reserves and temperature which needs to be between 5°C to 55°C and, if possible, use fertilizers to boost the grow time and increase the yield of your plants (you can use seeds to make fertilizers). In desperate times, you can also use the trader to buy food.
 
-Also note that if you adjust the Hunger/Hydration rate to other value different than 1, the amount of plants you need to grow and the time to deploy your hydrophonics changes accordingly. Hunger/Hydration Rate in 1.5 means you need to grow at least 30 plants per 6 days, also means you need to sow your first plants at day 4.
+Note that if you adjust the Hunger/Hydration rate to other value different than 1, the amount of plants you need to grow and the time to deploy your hydrophonics changes accordingly.
 
-[b]Updates:[/b]
+Good Luck and leave your feedback, it will be greatly appreciated!
 
-* v0.3 - Now, if you die, your food/water would not be filled to 100%.
-* v0.4 - Small balance: Foods will fill you 10% more. Added a new spawning condition with more seeds and extra food.
-* v0.5 - Changed several food nutrition values and recipes to balance them. Made complex food worth the cooking. You also eat some foods faster now.
-* v0.6 - Small adjust to the nutrition values of some foods. Fix to growth states of plants (after some time, mature plants were dying when they shouldn't).
+[b]Linux Support:[/b]
 
-[b]Future plans for this mod:[/b]
+If you're playing on Linux or other SO besides Windows, Stationeers.Addons currently don't support it. But you can use the BepInEx version of this mod scripts available here: https://github.com/ThndrDev/Stationeers-PlantsnNutritionRebalance-BepInEx
 
-* Configuration file so the players can do the maths and adjust the mod parameters by themselves if they want so.
-* Dynamic dehydration and Calories consumption rate, accordingly to the character activity (if you're running, you'll dehydrate faster, sitting dehydrate slower)
-* Implement a kind of cooldown to prevent overfeeding or maybe limit how mutch of the same culture you can eat 
-(Please leave your feedback about these ideas)
+[b]Source and Contributions:[/b]
+https://github.com/ThndrDev/Stationeers-PlantsnNutritionRebalance
+
+[b]Discord:[/b]
+https://discord.gg/dq36VutyN3
 </Description>
   <WorkshopHandle>2584817814</WorkshopHandle>
   <Tags />
