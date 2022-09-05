@@ -10,6 +10,7 @@ namespace PlantsnNutritionRebalance.Scripts
         public void OnLoad()
         {
             Debug.Log("PlantsnNutritionRebalance: Mod is running!");
+            PlantGrowStagePatch.PatchPrefabs();
         }
         public void OnUnload()
         {

@@ -2,13 +2,14 @@
 <ModMetadata xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Name>Plants and Nutrition Rebalance</Name>
   <Author>Thund3r</Author>
-  <Version>0.7</Version>
+  <Version>0.8</Version>
   <Description>WARNING: This mod will not work, unless you install Stationeers.Addon mod loader.
 Read how to install it here: https://github.com/Erdroy/Stationeers.Addons
+
 ---
-Make sure to put the mod [b]above[/b] core inside the game.
+Make sure to put this mod [b]above[/b] core inside the game.
 ---
-NOTE: After the MP update they temporarily disabled XML workshop mods, so you need to manually add some changes inside the game XML files until it's fixed. Check in the discord how to do that.
+
 
 [b]Description:[/b]
 
@@ -20,11 +21,11 @@ In this mod, I tried to use Real World data as a base parameter, whenever possib
 
 [b]What this mod changes:[/b]
 
-* The growth speed of plants: Now they take ~6 game days (orbit period in 2) or ~12 game days (orbit period in 1) to grow in perfect conditions and with full-time illumination. If you're not using Grow lights, expect 2x that time, as the plants stop growing in the dark. (In RL, small editable plants take at least 60 days to grow, so I used 1/10 of that).
+* The growth speed of plants: Now they take between 4 to 8 game days (orbit period in 2) or ~12 game days (orbit period in 1) to grow in perfect conditions and with full-time illumination. If you're not using Grow lights, expect 2x that time, as the plants stop growing in the dark. (In RL, small editable plants take 60-120 days to grow, so I used 1/10 of that).
 
-* The amount of water plants consumes: In the stock game, plants take very little water to grow, this mod changes it so they take a realistic amount of water from the pipes per tick. The consumption was calculated roughly from https://www.watereducation.org/post/food-facts-how-much-water-does-it-take-produce. In RL 3 tomatoes fruits need 24 Gallons or 110 liters of water to fully grow, so I adjusted the plants consumption per tick to match that value.
+* The amount of water plants consumes: In the stock game, plants take very little water to grow, this mod changes it so they take a realistic amount of water from the pipes per tick. The consumption was calculated roughly from RL online data and each plant culture will have it own water usage.
 
-* The max food and water of the character: Now you can stay 2½ game days without water and 10 game days without food before you start dying (orbit period in 2), more or less the same endurance of humans in RL.
+* The max food and water of the character: Now you can stay 2½ game days without water and 10 game days without food before you start dying (orbit period in 2, Stationeers difficulty), more or less the same endurance of humans in RL.
 
 * The amount you have to eat and drink daily: This setting was balanced assuming that an average person has to drink 2 liters of water and consume 2000 calories every day. So you'll need to drink a little more than 1 bottle of water per day (1 bottle = 1.86 Liters ingame) and eat 2 or 3 full cans of food (depending of the can) just to keep up with the Dehydration and Calories consumption rate.
 
@@ -54,17 +55,12 @@ For Vulcan and Venus, the original spawn conditions don't have any seeds, you ne
 
 This mod is balanced with the following ingame configurations:
 Sun Orbit Period in 2.
-Hunger/Hydration Rate in 1, but it can be adjusted for your liking, if you want a easier or harder experience (i suggest 0.7 for "easy", 1.3 for "hard" and 2 for "very hard" difficulty). 
-
-These recommendations are considering easy/medium maps like Moon/Mars/Europa. On Vulcan or Venus this mod will be an tough challenge mainly due to the temperature, water and urgency to build the hydrophonics.
-
+Stationeers difficulty, but you can use the normal and easy difficulty (the mod will reduce the hunger rate accordingly). 
 
 [b]What to expect and tips:[/b]
 
-With the recommended game settings, when you start a new game, you'll have roughly 5 game days to establish your base, build your greenhouse and start growing some plants. You'll need at least 25 plants growing (with growlights) to feed each person with enough food during 6 ingame days. Also note different foods give different nutrition values, so the amount of plants depends of what you're eating.
+With the recommended game settings, when you start a new game, you'll have roughly 5 game days to establish your base, build your greenhouse and start growing some plants. You'll need at least 25 plants growing (with growlights) to feed each person with enough food during 6 ingame days. Also note different foods give different nutrition values and have different growth times, so the amount of plants depends of what you're eating.
 Also try to keep the plants in the 30 to 40 °C temperature range, always check your water reserves and temperature which needs to be between 5°C to 55°C and, if possible, use fertilizers to boost the grow time and increase the yield of your plants (you can use seeds to make fertilizers). In desperate times, you can also use the trader to buy food.
-
-Note that if you adjust the Hunger/Hydration rate to other value different than 1, the amount of plants you need to grow and the time to deploy your hydrophonics changes accordingly.
 
 Good Luck and leave your feedback, it will be greatly appreciated!
 
