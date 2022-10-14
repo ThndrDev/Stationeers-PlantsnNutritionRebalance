@@ -126,7 +126,6 @@ namespace PlantsnNutritionRebalance.Scripts
                         plant.WaterPerTick *= 1.4f;
                         break;
                 } //TODO: Make water consumption to be different through growth stages, preferably with a gradient increase
-                  //TODO: Find a way to change the yields of each plant, right now all plants HarvestQuantity are equal: 2
             }
             Debug.Log("Plants and Nutrition - Prefabs for plants are patched!");
         }
@@ -138,14 +137,10 @@ namespace PlantsnNutritionRebalance.Scripts
     {
         [HarmonyPatch("ApplyFertilizer")]
         [UsedImplicitly]
-        [HarmonyPrefix]
-        public static bool PlantApplyFertilizerPatch(Plant __instance)
+        [HarmonyPostfix]
+        public static void PlantApplyFertilizerPatch(Plant __instance)
         {
-            __instance.HarvestQuantity += 2; // yields + 2 
-            __instance.SeedQuantity = __instance.HarvestQuantity;
             __instance.FertilizerBoost = 1.15f; // 15% boost in growth time
-            __instance.IsFertilized = true;
-            return false;
         }
     }
 
@@ -221,7 +216,7 @@ namespace PlantsnNutritionRebalance.Scripts
                     NutritionLossPerTick = Mathf.Lerp(0.061875f, 0.163125f, hungerdifficulty);
                     break;
             }
-            // Human.LifeNutrition
+            // Complete rewrite of base method Human.LifeNutrition
             float num = NutritionLossPerTick * (__instance.OrganBrain.IsOnline ? 1f : WorldManager.CurrentWorldSetting.DifficultySetting.LifeFunctionLoggedOut);
             __instance.Nutrition -= num;
             // Entity.LifeNutrition
@@ -229,12 +224,12 @@ namespace PlantsnNutritionRebalance.Scripts
             {
                 return false;
             }
-            if (__instance.Nutrition <= 0f)
+            if (__instance.Nutrition <= 0f) // increase the damage when nutrition reaches 0
             {
                 __instance.DamageState.Damage(ChangeDamageType.Increment, 0.2f, DamageUpdateType.Starvation);
                 return false;
             }
-            if (__instance.DamageState.Starvation > 0f && __instance.Nutrition >= 540f)
+            if (__instance.DamageState.Starvation > 0f && __instance.Nutrition >= 540f) // Only heals the character when nutrition is over 540 (after "Nutrition Critical" warning)
             {
                 __instance.DamageState.Damage(ChangeDamageType.Decrement, 0.1f, DamageUpdateType.Starvation);
             }
@@ -242,7 +237,7 @@ namespace PlantsnNutritionRebalance.Scripts
         }
     }
 
-    // After Death/Respawn, don't give 100% food and water:
+    // Calculates the Food and Nutrition to give to the player based on the dayspast in the save, so we don't reward a character who dies with 100% stats
 	[HarmonyPatch(typeof(Entity))]
     public static class OnLifeCreatedPatch
 	{
@@ -422,9 +417,7 @@ namespace PlantsnNutritionRebalance.Scripts
         {
             if (__instance.DisplayName == "Egg" || __instance.DisplayName == "Fertilized Egg")
             {
-                Debug.Log($"__instance.name {__instance.name}    __instance.CustomName {__instance.CustomName}");
                 __instance.DecayRate = 0.000091f; //should spoil in ~12 game days without refrigeration with this value
-                Debug.Log($"new __instance.DecayRate: {__instance.DecayRate}");
             }
         }
     }
