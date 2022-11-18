@@ -10,19 +10,6 @@ using Assets.Scripts.Objects;
 
 namespace PlantsnNutritionRebalance.Scripts
 {
-    // Adjusts the fertilizer to be less OP:
-    [HarmonyPatch(typeof(Plant))]
-    public class FertilizerPatch
-    {
-        [HarmonyPatch("ApplyFertilizer")]
-        [UsedImplicitly]
-        [HarmonyPostfix]
-        public static void PlantApplyFertilizerPatch(Plant __instance)
-        {
-            __instance.FertilizerBoost = 1.15f; // 15% boost in growth time
-        }
-    }
-
     // Adjusts the water consumption of plants:
     [HarmonyPatch(typeof(PlantLifeRequirements))]
     public class PlantLifeRequirementsPatch
