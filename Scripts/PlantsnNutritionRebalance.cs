@@ -24,8 +24,8 @@ namespace PlantsnNutritionRebalance.Scripts
     // Adjust the plants growth stages
     public class PlantGrowStagePatch
     {
-        private static int[] fernStages = { 1, 800, 1600, 1200, -1, 0 }; //892110467 & -1990600883 
-        private static int[] potatoStages = { 1, 800, 1600, 1200, -1, 0 }; //1929046963 & 1005571172
+        private static int[] fernStages = { 1, 1200, 1200, 1200, 1200, -1, 0 }; //892110467 & -1990600883 
+        private static int[] potatoStages = { 1, 1200, 1200, 1200, 1200, -1, 0 }; //1929046963 & 1005571172
 
 
         private static Dictionary<int, int[]> plantStages = new Dictionary<int, int[]>();
