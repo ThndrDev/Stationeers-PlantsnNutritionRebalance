@@ -2,43 +2,27 @@
 <ModMetadata xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Name>Plants and Nutrition</Name>
   <Author>Thund3r</Author>
-  <Version>0.9.0</Version>
-  <Description>WARNING: This mod will not work, unless you install Stationeers.Addon mod loader.
-Read how to install it here: https://github.com/Erdroy/Stationeers.Addons
-
----
-Installation:
-* Install the latest version of Stationeers.Addon mod loader. Currently it's 0.4.2
-* Subscribe to this mod in steam
-* Load the game, go to workshop and put this mod above core inside the game. Close the game.
-* There's a game bug where the modded XML blueprints are not being applied https://stationeers.atlassian.net/browse/STAT-2537. For now, to get the right food recipes, look for the pinned message in the mod discord channel for an workaround https://discord.gg/dq36VutyN3
----
-
-[b]Description:[/b]
+  <Version>0.9.1</Version>
+  <Description>[h2]Description:[/h2]
 
 Food in general is almost pointless in the vanilla game, a single can of food fills your hunger forever. This doesn't seem to be in line with the proposal of this great game (wich is to be for hardcore players).
 
 This mod aims to fix that by changing some plants growth time, human and Zillian nutrition/hydration and food calories. Now you'll have a reason to build a big greenhouse in your base, maybe even a pantry room to store some emergency food in case something goes wrong and your plants die.
 
 In this mod, I tried to use Real World data as a base parameter, whenever possible. But BE WARNED, this will add new challenges to the game and will make it harder (but much more interesting). If you don't want that, don't use this mod!
+---
 
-[b]What this mod changes:[/b]
+[h2]What this mod changes:[/h2]
 
 * The growth speed of some plants. Now they take longer to grow. See the table in the images for details.
 
 * The amount of water plants consumes: In the stock game, plants take very little water to grow, this mod changes it so they take more water from the pipes per tick.
 
-* The max food and water of the character: Now you can stay 2½ game days without water and 8 game days without food before you start dying (Stationeers difficulty), more or less the same endurance of humans in RL.
+* The max food and water of the character: Now you can stay 2� game days without water and 8 game days without food before you start dying (Stationeers difficulty), more or less the same endurance of humans in RL.
 
 * The amount you have to eat and drink daily: This setting was balanced assuming that an average person has to drink 2 liters of water and consume 2000 calories every day. So you'll need to drink a little more than 1 bottle of water per day (1 bottle = 1.86 Liters ingame) and eat 2 or 3 full cans of food (depending of the can) just to keep up with the Dehydration and Calories consumption rate.
 
-* The amount of food/water you'll get after death/respawn (to avoid rewarding someone who dies with 100% resources). If you die or a new friend joins you, the character will respawn with food and water proportional to the days past in the save. Examples (considering sun/orbit period in 2):
-Died or friend joined in day 0 = respawn with 100% food/water
-Died or friend joined in day 1 = 90% food/water
-...
-Died or friend joins in day 7 = 30% food/water
-Died or friend joins in day 9 = 10% food/water
-After day 10, you'll respawn with minimal food and water, just enough for you to run to your (or friend's) pantry room and feast yourself.
+* The amount of food/water you'll get after death/respawn (to avoid rewarding someone who dies with 100% resources). If you die or a new friend joins you, the character will respawn with food and water proportional to the days past in the save.
 
 Also, remember that if you're playing in multiplayer, or as a guest in someone's save, if you go offline in a random place of your base and the host keep playing, after some time your character will die of starvation/hydration/suffocation and, when you respawn, you'll get the low food/water. To avoid this, you should logoff in a Sleeper https://stationeers-wiki.com/Sleeper or Cryotube https://stationeers-wiki.com/Cryotube. They stop food/water consumtion completely and provide oxygen as long as your online friends keep the power and oxygen going, also put an APC with battery near the sleeper because power interruptions (by changing wires for example) will kill you or your sleeping friends.
 
@@ -55,30 +39,48 @@ Also, remember that if you're playing in multiplayer, or as a guest in someone's
 For Vulcan and Venus, the original spawn conditions don't have any seeds, you need to get them through the trader, so i don't made any changes in them.
 
 * Eggs:
-- Fertilized Eggs now need controlled enviroments to hatch. Pressure between 50 to 120kpa, temperature between 36°C to 38°C (96.8°F to 100.4°F) They will need to stay 7 days in this conditions to hatch. The egg will show an tooltip similar to the plants, so you can see if it's hatching or not.
-- Eggs and Fertilized ones take 12 game days to spoil without refrigeration, so you should be able to use the eggs from the lander now to eat, or maybe, hatch.
+- Fertilized Eggs now need controlled enviroments to hatch. Pressure between 50 to 120kpa, temperature between 36°C to 38°C (96.8°F to 100.4°F) They need to stay 7 days in this conditions to hatch. The egg will show an tooltip similar to the plants, so you can see if it's hatching or not.
+- Eggs and Fertilized ones take 12 game days to spoil without refrigeration, so now you should have a chance to use the eggs from the lander.
+---
 
-[b]Recommended Game Configuration:[/b]
+[h2]Installation:[/h2]
+This mod uses scripts and it will only work if you use a modloader. Currently it support Stationeers.Addons and BepInEx modloaders. Choose JUST ONE to install and follow the procedures:
 
-This mod is balanced with the Stationeers difficulty ingame, but you can use the normal and easy difficulty (the mod will reduce the hunger rate accordingly). 
+[b]Using BepInEx:[/b]
+* Subscribe to this mod here in the workshop
+* Load the game, go to workshop and put this mod above core inside the game. Close the game.
+* Follow the instructions in the github page to install BepInEx modloader and Plants and Nutrition scripts for BepInEx: https://github.com/ThndrDev/Stationeers-PlantsnNutritionRebalance-BepInEx
+* There's a game bug where the modded XML blueprints are not being applied https://stationeers.atlassian.net/browse/STAT-2537. For now, to get the right food recipes, look for the pinned message in the mod discord "news" channel for an workaround https://discord.gg/dq36VutyN3. 
 
-[b]What to expect and tips:[/b]
+[b]Using Stationeers.Addons[/b]
+* Install the latest version of Stationeers.Addons mod loader. Oficially, it's available here: https://github.com/Erdroy/Stationeers.Addons but Edroy, the original developer of Addons, seems to be inactive and the modloader is broken for quite some time. But unoficially, Jixxed published an updated version in the modding channel of Stationeers discord that's working. If you want to keep using Addons and don't care about using the unnoficial version, just search in discord: "from:Jixxed has:file Addons" without quotes and you'll find it.
+* Subscribe to this mod in steam
+* Load the game, go to workshop and put this mod above core inside the game. Close the game.
+* There's a game bug where the modded XML blueprints are not being applied https://stationeers.atlassian.net/browse/STAT-2537. For now, to get the right food recipes, look for the pinned message in the mod discord "news" channel for an workaround https://discord.gg/dq36VutyN3
+---
 
-With the recommended game settings, when you start a new game, you'll have roughly 5 game days to establish your base, build your greenhouse and start growing some plants. You'll need at least 20 plants growing (with growlights) to feed each person with enough food. Also note different foods give different nutrition values and have different growth times, so the amount of plants depends of what you're eating.
-If possible, use fertilizers to boost the grow time (you can use seeds to make fertilizers). In desperate times, you can also use the trader to buy food.
+[h2]Recommended Game Configuration:[/h2]
 
-Good Luck and leave your feedback, it will be greatly appreciated!
+It's highly recommended to play with sun/orbit in 2. You can change it in the game configuration menu.
+---
 
-[b]Linux Support:[/b]
+[h2]List of custom planets compatible with this mod:[/h2]
+* GJ 229 AC (PlantsnNutrition compatible version) https://steamcommunity.com/sharedfiles/filedetails/?id=2934821898
+* TRAPPIST-1 (PlantsnNutrition compatible version) https://steamcommunity.com/sharedfiles/filedetails/?id=2934825779
+* KLEPTO-45 https://steamcommunity.com/sharedfiles/filedetails/?id=2841858389
+---
 
-If you're playing on Linux or other SO besides Windows, Stationeers.Addons currently don't support it. But you can use the BepInEx version of this mod scripts available here: https://github.com/ThndrDev/Stationeers-PlantsnNutritionRebalance-BepInEx
-I also recommend to use BepInEx if you're setting up a dedicated server.
+[h2]Linux and Dedicated server Support:[/h2]
 
-[b]Source and Contributions:[/b]
-https://github.com/ThndrDev/Stationeers-PlantsnNutritionRebalance
+It's fully compatible, but only works with the BepInEx install
 
-[b]Discord:[/b]
-https://discord.gg/dq36VutyN3
+[b]Source and Contributions:[/b]  https://github.com/ThndrDev/Stationeers-PlantsnNutritionRebalance
+
+[b]Discord:[/b]  https://discord.gg/dq36VutyN3
+
+[h2]Other mods that you may also like:[/h2]
+* [url=steamcommunity.com/sharedfiles/filedetails/?id=2936575063]Wind vs Gravity (currently broken by an update)[/url]
+* [url=steamcommunity.com/sharedfiles/filedetails/?id=2937912184]Fuel Jetpack[/url]
 </Description>
   <WorkshopHandle>2584817814</WorkshopHandle>
   <Tags />

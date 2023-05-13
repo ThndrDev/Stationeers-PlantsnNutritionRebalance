@@ -97,26 +97,38 @@ namespace PlantsnNutritionRebalance.Scripts
 
         public static void PatchPrefabs()
         {
-            var type = typeof(Assets.Scripts.Objects.Prefab);
-            var fieldInfo = type.GetFields()[0];
-            Dictionary<int, Thing> allPrefabs = (Dictionary<int, Thing>)fieldInfo.GetValue(null);
+            List<Thing> allPrefabs = Assets.Scripts.Objects.Prefab.AllPrefabs;
+            Dictionary<int, Plant> plantDict = new Dictionary<int, Plant>();
+
+            // Create a dictionary of plants for easier access
+            foreach (Thing thing in allPrefabs)
+            {
+                if (thing is Plant plant)
+                {
+                    plantDict[plant.PrefabHash] = plant;
+                }
+                else if (thing is Seed seed)
+                {
+                    plantDict[seed.PlantType.PrefabHash] = seed.PlantType;
+                }
+            }
+
+            // Apply the changes to the plants
             foreach (var keyValuePair in plantStages)
             {
-                Plant plant = (Plant)allPrefabs[keyValuePair.Key];
-                if (plant is Seed seed)
+                if (plantDict.TryGetValue(keyValuePair.Key, out Plant plant))
                 {
-                    plant = seed.PlantType;
-                }
-                for (var index = 0; index < plant.GrowthStates.Count; index++)
-                {
-                    var plantStage = plant.GrowthStates[index];
-                    if (plantStage.Length > 2)
+                    for (var index = 0; index < plant.GrowthStates.Count; index++)
                     {
-                        plantStage.Length = plantStages[plant.PrefabHash][index];
+                        var plantStage = plant.GrowthStates[index];
+                        if (plantStage.Length > 2)
+                        {
+                            plantStage.Length = plantStages[plant.PrefabHash][index];
+                        }
                     }
                 }
             }
-            Debug.Log("Plants and Nutrition - Prefabs for selected plants are patched!");
+            Debug.Log("Plants and Nutrition - Successfully applied growth stage modifications to plants.");
         }
     }
 
