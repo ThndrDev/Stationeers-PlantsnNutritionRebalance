@@ -323,7 +323,7 @@ namespace PlantsnNutritionRebalance.Scripts
         {
             if (__instance is FertilizedEgg fertilizedEgg)
             {
-                __result.Description = getTooltipText(fertilizedEgg);
+                __result.Extended = getTooltipText(fertilizedEgg);
             }
             return __result;
         }
