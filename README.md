@@ -1,9 +1,5 @@
 # Stationeers - Plants and Nutrition Rebalance
 
-This is the source code of the stationeers mod available at https://steamcommunity.com/sharedfiles/filedetails/?id=2584817814 
+After the discontinuity of Stationeers.Addons there's no point to maintain a different code versions for it, so this repository is being archived.
 
-For the description of what it does, installation instructions and everything else, please read the description on the Steam Workshop.
-
-# Contributions
-
-If you are interested in this, feel free to contribute with this mod development through pull requests or fixing issues.
+Please use https://github.com/ThndrDev/Stationeers-PlantsnNutritionRebalance-BepInEx for mod contributions as it's now the main code repository for the Plants and Nutrition mod.
